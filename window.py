@@ -1,8 +1,10 @@
 import tkinter
+from tkinter import ttk
+from ttkthemes import ThemedTk
 
 class window:
     def __init__(self, title, framesize):
-        self.root = tkinter.Tk()
+        self.root = ThemedTk(theme="breeze")
         self.root.title(title)
 
         width, height = framesize

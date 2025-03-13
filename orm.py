@@ -18,3 +18,7 @@ class handler:
         write = (name, price, category, id)
         self.cursor.execute("UPDATE products SET name = ?, price = ?, category = ? WHERE id = ?", write)
         self.connection.commit()
+
+    def deleteWrite(self, id):
+        self.cursor.execute("DELETE FROM products WHERE id=?", id)
+        self.connection.commit()

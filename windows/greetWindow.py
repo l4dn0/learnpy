@@ -17,9 +17,11 @@ class GreeterWindow:
 
     def openCustomerWindow(self):
         customerWindow = CustomerWindow()
+        self.w.root.destroy()
 
     def openSellerWindow(self):
         sellerWindow = SellerWindow()
+        self.w.root.destroy()
 
     def mainloop(self):
         self.w.mainloop()
