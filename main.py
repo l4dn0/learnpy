@@ -1,9 +1,26 @@
-def in_area(x, y):
-    if -1 <= x <= 1 and 0 <= y <= 2:
-        if y <= 1 and x ** 2 + y ** 2 <= 1:
-            return True
-    else: return False
+from funcs import enter_coordinates
+from funcs import get_count_cords
+from funcs import print_list
+
+def main():
+    while True:
+        command = int(input("""выберите команду:
+    0 - завершить программу
+    1 - ввести координаты точки
+    2 - вывести количество точек, которые попали в заданную область
+    3 - вывести координаты точек, которые не попали в заданную область
+    4 - стереть из памяти до этого введёные координаты точек
+-> """))
+        match command:
+            case 0:
+                exit()
+            case 1:
+                enter_coordinates()
+            case 2:
+                print(f"\n{get_count_cords()} - количество входящих в область точек.\n")
+            case 3:
+                print_list()
 
 
-x, y = map(float, input("Введите два числа - значения x и y через пробел (разделитель дробной части - запятая): ").split())
-
+if __name__ == "__main__":
+    main()
